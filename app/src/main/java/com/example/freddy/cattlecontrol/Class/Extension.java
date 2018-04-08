@@ -1,35 +1,43 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
 
 public class Extension {
 
-    private int extension;
-    private int measure;
+    private Integer extension;
+    private Boolean measure;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Extension() {
     }
 
-    public Extension(int extension, int measure) {
+    /**
+     * 
+     * @param extension
+     * @param measure
+     */
+    public Extension(Integer extension, Boolean measure) {
+        super();
         this.extension = extension;
         this.measure = measure;
     }
 
-    public int getExtension() {
+    public Integer getExtension() {
         return extension;
     }
 
-    public void setExtension(int extension) {
+    public void setExtension(Integer extension) {
         this.extension = extension;
     }
 
-    public int getMeasure() {
+    public Boolean getMeasure() {
         return measure;
     }
 
-    public void setMeasure(int measure) {
+    public void setMeasure(Boolean measure) {
         this.measure = measure;
     }
 

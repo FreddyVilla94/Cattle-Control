@@ -1,30 +1,41 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
 
 public class Out {
 
-    private int id;
+    private Integer id;
     private String idAnimal;
     private String date;
-    private String destiny;
+    private Boolean destiny;
 
-    public Out() {}
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public Out() {
+    }
 
-    public Out(int id, String idAnimal, String date, String destiny) {
+    /**
+     * 
+     * @param id
+     * @param idAnimal
+     * @param destiny
+     * @param date
+     */
+    public Out(Integer id, String idAnimal, String date, Boolean destiny) {
+        super();
         this.id = id;
         this.idAnimal = idAnimal;
         this.date = date;
         this.destiny = destiny;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,21 +55,21 @@ public class Out {
         this.date = date;
     }
 
-    public String getDestiny() {
+    public Boolean getDestiny() {
         return destiny;
     }
 
-    public void setDestiny(String destiny) {
+    public void setDestiny(Boolean destiny) {
         this.destiny = destiny;
     }
 
     @Override
     public String toString() {
         return "Out{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", idAnimal='" + idAnimal + '\'' +
                 ", date='" + date + '\'' +
-                ", destiny='" + destiny + '\'' +
+                ", destiny=" + destiny +
                 '}';
     }
 }

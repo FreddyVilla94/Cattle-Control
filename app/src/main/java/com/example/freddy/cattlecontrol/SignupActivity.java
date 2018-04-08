@@ -1,5 +1,6 @@
 package com.example.freddy.cattlecontrol;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -11,10 +12,23 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.freddy.cattlecontrol.Class.ApiCattleCow;
+import com.example.freddy.cattlecontrol.Class.RetrofitClient;
+import com.example.freddy.cattlecontrol.Class.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener{
+
+    RetrofitClient retrofitClient;
 
     @BindView(R.id.register_name) EditText registerName;
     @BindView(R.id.register_lastname) EditText registerLastname;
@@ -68,8 +82,52 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 }else if(registerConfirmPassword.getText().toString().equals("")){
                     registerConfirmPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.app_alert, 0);
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.sign_up_activity_invalid_confirm_password), Toast.LENGTH_LONG).show();
-                }else{
+                }else if(!registerPassword.getText().toString().equals(registerConfirmPassword.getText().toString())){
+                    registerConfirmPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.app_alert, 0);
+                    registerConfirmPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.app_alert, 0);
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.sign_up_activity_invalid_passwords_do_not_match), Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Retrofit retrofit = retrofitClient.getClient();
+                    User user = new User(registerName.getText().toString(),registerLastname.getText().toString(),
+                            registerEmail.getText().toString(),registerUsername.getText().toString(),
+                            registerPassword.getText().toString());
+                    ApiCattleCow userService = retrofit.create(ApiCattleCow.class);
+                    /*Call<List<User>> listCall = userService.getData();
+                    listCall.enqueue(new Callback<List<User>>() {
+                        @Override
+                        public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                            if (response.isSuccessful()) {
+                                List<User> userList = new ArrayList<>();
+                                userList = response.body();
+                                userList.toString();
+                            }else{
+                                Toast.makeText(getApplicationContext(),"NO",Toast.LENGTH_SHORT).show();
+                            }
+                        }
 
+                        @Override
+                        public void onFailure(Call<List<User>> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(),"NO1",Toast.LENGTH_SHORT).show();
+                        }
+                    });*/
+                    userService.createUser(user).enqueue(new Callback<User>() {
+                        @Override
+                        public void onResponse(Call<User> call, Response<User> response) {
+                            if(response.isSuccessful()){
+                                Toast.makeText(getApplicationContext(),R.string.login_activity_signing_in,Toast.LENGTH_SHORT).show();
+                                Intent intentRegister = new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(intentRegister);
+                            }else{
+                                Toast.makeText(getApplicationContext(),R.string.sign_up_activity_error_signing_up,Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<User> call, Throwable t) {
+
+                        }
+                    });
                 }
                 break;
             case R.id.register_event:

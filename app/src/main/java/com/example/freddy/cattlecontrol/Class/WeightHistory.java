@@ -1,29 +1,38 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
 
 public class WeightHistory {
 
-    private int id;
+    private Integer id;
     private String date;
-    private int weight;
+    private Integer weight;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public WeightHistory() {
     }
 
-    public WeightHistory(int id, String date, int weight) {
+    /**
+     * 
+     * @param id
+     * @param weight
+     * @param date
+     */
+    public WeightHistory(Integer id, String date, Integer weight) {
+        super();
         this.id = id;
         this.date = date;
         this.weight = weight;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -35,11 +44,11 @@ public class WeightHistory {
         this.date = date;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -48,7 +57,7 @@ public class WeightHistory {
         return "WeightHistory{" +
                 "id=" + id +
                 ", date='" + date + '\'' +
-                ", weight='" + weight + '\'' +
+                ", weight=" + weight +
                 '}';
     }
 }

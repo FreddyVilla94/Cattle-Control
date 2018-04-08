@@ -1,31 +1,42 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
 import java.util.ArrayList;
-
-/**
- * Created by Freddy on 7/4/2018.
- */
 
 public class Animal {
 
     private String id;
     private String breed;
-    private boolean gender;
+    private Boolean gender;
     private String dateOfAdmission;
-    private boolean state;
-    private ArrayList<WeightHistory> weightHistoryList;
+    private Boolean state;
+    private ArrayList<WeightHistory> weightHistory = null;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Animal() {
-        weightHistoryList = new ArrayList<>();
+        weightHistory = new ArrayList<>();
     }
 
-    public Animal(String id, String breed, boolean gender, String dateOfAdmission, boolean state) {
+    /**
+     * 
+     * @param weightHistory
+     * @param id
+     * @param breed
+     * @param state
+     * @param gender
+     * @param dateOfAdmission
+     */
+    public Animal(String id, String breed, Boolean gender, String dateOfAdmission, Boolean state) {
+        super();
         this.id = id;
         this.breed = breed;
         this.gender = gender;
         this.dateOfAdmission = dateOfAdmission;
         this.state = state;
-        weightHistoryList = new ArrayList<>();
+        weightHistory = new ArrayList<>();
     }
 
     public String getId() {
@@ -44,11 +55,11 @@ public class Animal {
         this.breed = breed;
     }
 
-    public boolean getGender() {
+    public Boolean getGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(Boolean gender) {
         this.gender = gender;
     }
 
@@ -60,20 +71,20 @@ public class Animal {
         this.dateOfAdmission = dateOfAdmission;
     }
 
-    public boolean getState() {
+    public Boolean getState() {
         return state;
     }
 
-    public void setState(boolean state) {
+    public void setState(Boolean state) {
         this.state = state;
     }
 
-    public ArrayList<WeightHistory> getWeightHistoryList() {
-        return weightHistoryList;
+    public ArrayList<WeightHistory> getWeightHistory() {
+        return weightHistory;
     }
 
-    public void setWeightHistoryList(ArrayList<WeightHistory> weightHistoryList) {
-        this.weightHistoryList = weightHistoryList;
+    public void setWeightHistory(ArrayList<WeightHistory> weightHistory) {
+        this.weightHistory = weightHistory;
     }
 
     @Override
@@ -81,7 +92,7 @@ public class Animal {
         return "Animal{" +
                 "id='" + id + '\'' +
                 ", breed='" + breed + '\'' +
-                ", gender='" + gender + '\'' +
+                ", gender=" + gender +
                 ", dateOfAdmission='" + dateOfAdmission + '\'' +
                 ", state=" + state +
                 '}';

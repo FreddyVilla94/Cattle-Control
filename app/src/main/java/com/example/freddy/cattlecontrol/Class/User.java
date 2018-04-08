@@ -1,40 +1,42 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
 import java.util.ArrayList;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
-
 public class User {
-    private String id;
+
     private String name;
-    private String lastname;
+    private String lastName;
     private String email;
     private String username;
     private String password;
-    private ArrayList<Farm> farmList;
+    private ArrayList<Farm> farms = null;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public User() {
-        farmList = new ArrayList<>();
+        farms = new ArrayList<>();
     }
 
-    public User(String id, String name, String lastname, String email, String username, String password) {
-        this.id = id;
+    /**
+     * 
+     * @param lastName
+     * @param username
+     * @param email
+     * @param farms
+     * @param name
+     * @param password
+     */
+    public User(String name, String lastName, String email, String username, String password) {
+        super();
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.email = email;
         this.username = username;
         this.password = password;
-        farmList = new ArrayList<>();
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        farms = new ArrayList<>();
     }
 
     public String getName() {
@@ -45,12 +47,12 @@ public class User {
         this.name = name;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -77,19 +79,19 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<Farm> getFarmList() {
-        return farmList;
+    public ArrayList<Farm> getFarms() {
+        return farms;
     }
 
-    public void setFarmList(ArrayList<Farm> farmList) {
-        this.farmList = farmList;
+    public void setFarms(ArrayList<Farm> farms) {
+        this.farms = farms;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +

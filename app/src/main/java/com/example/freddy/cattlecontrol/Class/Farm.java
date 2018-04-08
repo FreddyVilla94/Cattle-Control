@@ -1,40 +1,51 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
 import java.util.ArrayList;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
-
 public class Farm {
 
-    private int id;
+    private Integer id;
     private String name;
     private Extension extension;
-    private ArrayList<Animal> animalList;
-    private ArrayList<Plan> planList;
-    private ArrayList<Out> outList;
+    private ArrayList<Animal> animals = null;
+    private ArrayList<Plan> plans = null;
+    private ArrayList<Out> out = null;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Farm() {
-        animalList = new ArrayList<>();
-        planList = new ArrayList<>();
-        outList = new ArrayList<>();
+        animals = new ArrayList<>();
+        plans = new ArrayList<>();
+        out = new ArrayList<>();
     }
 
-    public Farm(int id, String name, Extension extension) {
+    /**
+     * 
+     * @param extension
+     * @param id
+     * @param plans
+     * @param animals
+     * @param name
+     * @param out
+     */
+    public Farm(Integer id, String name, Extension extension) {
+        super();
         this.id = id;
         this.name = name;
         this.extension = extension;
-        animalList = new ArrayList<>();
-        planList = new ArrayList<>();
-        outList = new ArrayList<>();
+        animals = new ArrayList<>();
+        plans = new ArrayList<>();
+        out = new ArrayList<>();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,28 +65,28 @@ public class Farm {
         this.extension = extension;
     }
 
-    public ArrayList<Animal> getAnimalList() {
-        return animalList;
+    public ArrayList<Animal> getAnimals() {
+        return animals;
     }
 
-    public void setAnimalList(ArrayList<Animal> animalList) {
-        this.animalList = animalList;
+    public void setAnimals(ArrayList<Animal> animals) {
+        this.animals = animals;
     }
 
-    public ArrayList<Plan> getPlanList() {
-        return planList;
+    public ArrayList<Plan> getPlans() {
+        return plans;
     }
 
-    public void setPlanList(ArrayList<Plan> planList) {
-        this.planList = planList;
+    public void setPlans(ArrayList<Plan> plans) {
+        this.plans = plans;
     }
 
-    public ArrayList<Out> getOutList() {
-        return outList;
+    public ArrayList<Out> getOut() {
+        return out;
     }
 
-    public void setOutList(ArrayList<Out> outList) {
-        this.outList = outList;
+    public void setOut(ArrayList<Out> out) {
+        this.out = out;
     }
 
     @Override

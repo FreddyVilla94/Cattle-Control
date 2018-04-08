@@ -1,34 +1,43 @@
+
 package com.example.freddy.cattlecontrol.Class;
 
 import java.util.ArrayList;
 
-/**
- * Created by Freddy on 7/4/2018.
- */
-
 public class Plan {
 
-    private int id;
+    private Integer id;
     private String name;
     private String description;
-    private ArrayList<Animal> idAnimalList;
+    private ArrayList<Animal> animals = null;
 
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
     public Plan() {
-        idAnimalList = new ArrayList<>();
+        animals = new ArrayList<>();
     }
 
-    public Plan(int id, String name, String description) {
+    /**
+     * 
+     * @param id
+     * @param animals
+     * @param description
+     * @param name
+     */
+    public Plan(Integer id, String name, String description) {
+        super();
         this.id = id;
         this.name = name;
         this.description = description;
-        idAnimalList = new ArrayList<>();
+        animals = new ArrayList<>();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -48,12 +57,12 @@ public class Plan {
         this.description = description;
     }
 
-    public ArrayList<Animal> getIdAnimalList() {
-        return idAnimalList;
+    public ArrayList<Animal> getAnimals() {
+        return animals;
     }
 
-    public void setIdAnimalList(ArrayList<Animal> idAnimalList) {
-        this.idAnimalList = idAnimalList;
+    public void setAnimals(ArrayList<Animal> animals) {
+        this.animals = animals;
     }
 
     @Override

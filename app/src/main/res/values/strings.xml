@@ -36,5 +36,6 @@
     <string name="sign_up_activity_invalid_email">Correo inválido</string>
     <string name="sign_up_activity_invalid_password">Contraseña inválida</string>
     <string name="sign_up_activity_invalid_confirm_password">Confirmación de contraseña inválida</string>
+    <string name="sign_up_activity_invalid_passwords_do_not_match">Las contraseñas no coinciden</string>
     <string name="sign_up_activity_error_signing_up">Un error al registrarse</string>
 </resources>
