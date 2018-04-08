@@ -5,4 +5,36 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!--Login activity resources -->
+    <string name="login_activity_email">Correo</string>
+    <string name="login_activity_password">Contraseña</string>
+    <string name="login_activity_login">Login</string>
+    <string name="login_activity_or">o</string>
+    <string name="login_activity_register">¿Sin cuenta todavía? Créese una</string>
+
+    <string name="login_activity_signing_in">Iniciando sesión...</string>
+    <string name="login_activity_login_cancelled">Login cancelado</string>
+    <string name="login_activity_authentification_fail">La autentificación ha fallado, revisa tu conexión</string>
+    <string name="login_activity_invalid_data">Datos inválidos</string>
+    <string name="login_activity_net_connection">Por favor revisa tu conexión a la red</string>
+    <string name="login_activity_error_authenfication">Se ha producido un error al autentificar el usuario</string>
+
+    <!-- Sign up activity resources -->
+    <string name="sign_up_activity_name">Nombre</string>
+    <string name="sign_up_activity_last_name">Apellidos</string>
+    <string name="sign_up_activity_email">Correo</string>
+    <string name="sign_up_activity_username">Nombre de Usuario</string>
+    <string name="sign_up_activity_password">Contraseña</string>
+    <string name="sign_up_activity_confirm_password">Confirmar contraseña</string>
+    <string name="sign_up_activity_create_account">Crear cuenta</string>
+    <string name="sign_up_activity_login">¿Ya eres miembro? Login</string>
+
+    <string name="sign_up_activity_invalid_name">Nombre inválido</string>
+    <string name="sign_up_activity_invalid_lastname">Apellidos inválido</string>
+    <string name="sign_up_activity_invalid_username">Nombre de usuario inválido</string>
+    <string name="sign_up_activity_invalid_email">Correo inválido</string>
+    <string name="sign_up_activity_invalid_password">Contraseña inválida</string>
+    <string name="sign_up_activity_invalid_confirm_password">Confirmación de contraseña inválida</string>
+    <string name="sign_up_activity_error_signing_up">Un error al registrarse</string>
 </resources>

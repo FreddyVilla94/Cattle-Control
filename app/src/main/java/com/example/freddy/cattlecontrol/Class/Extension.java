@@ -1,4 +1,4 @@
-package com.example.freddy.cattlecontrol.Clases;
+package com.example.freddy.cattlecontrol.Class;
 
 /**
  * Created by Freddy on 7/4/2018.

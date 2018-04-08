@@ -1,4 +1,4 @@
-package com.example.freddy.cattlecontrol.Clases;
+package com.example.freddy.cattlecontrol.Class;
 
 import java.util.ArrayList;
 
