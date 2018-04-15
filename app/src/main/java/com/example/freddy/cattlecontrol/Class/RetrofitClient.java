@@ -9,16 +9,27 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static Retrofit retrofit = null;
+    private ApiCattleCow service;
+    private final Retrofit retrofit;
+    private String API_URL = "https://api-cattle-control.herokuapp.com/";
 
-    public static Retrofit getClient(){
-        if(retrofit == null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl("https://api-cattle-control.herokuapp.com/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
+    public RetrofitClient(){
+        this.retrofit = new Retrofit.Builder()
+                .baseUrl(API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        this.service = retrofit.create(ApiCattleCow.class);
+    }
+
+    public ApiCattleCow getService() {
+        return service;
+    }
+
+    public Retrofit getRetrofit() {
         return retrofit;
     }
 
+    public String getAPI_URL() {
+        return API_URL;
+    }
 }

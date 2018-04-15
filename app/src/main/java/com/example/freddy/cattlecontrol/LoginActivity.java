@@ -15,10 +15,16 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.freddy.cattlecontrol.Class.RetrofitClient;
 import com.example.freddy.cattlecontrol.Class.User;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 /**
@@ -26,6 +32,8 @@ import retrofit2.Retrofit;
  */
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+
+    RetrofitClient retrofitClient;
 
     @BindView(R.id.login_email) EditText loginEmail;
     @BindView(R.id.login_password) EditText loginPassword;
@@ -40,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
+        retrofitClient = new RetrofitClient();
         activityLogin = (ScrollView) findViewById(R.id.activity_login);
         activityLogin.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -60,11 +68,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(isNetAvailed()){
                     if(loginEmail.getText().toString().equals("") || loginPassword.getText().toString().equals("")){
                         Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_activity_invalid_data), Toast.LENGTH_LONG).show();
-                    }else if(!loginEmail.getText().toString().equals("admin") && loginPassword.getText().toString().equals("123")){
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_activity_invalid_data), Toast.LENGTH_LONG).show();
                     }else{
+                        this.retrofitClient.getService().getUsers().enqueue(new Callback<ArrayList<User>>() {
+                            @Override
+                            public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
+                                Toast.makeText(getApplicationContext(),response.body().toString(),Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<ArrayList<User>> call, Throwable t) {
+
+                            }
+                        });
+                        /*
                         Intent intentMenu = new Intent(this,MainActivity.class);
-                        startActivity(intentMenu);
+                        startActivity(intentMenu);*/
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.login_activity_net_connection), Toast.LENGTH_LONG).show();
