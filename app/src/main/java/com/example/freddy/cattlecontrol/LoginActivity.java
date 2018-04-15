@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.freddy.cattlecontrol.Class.Conector;
 import com.example.freddy.cattlecontrol.Class.RetrofitClient;
 import com.example.freddy.cattlecontrol.Class.User;
 
@@ -72,7 +73,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         this.retrofitClient.getService().getUsers().enqueue(new Callback<ArrayList<User>>() {
                             @Override
                             public void onResponse(Call<ArrayList<User>> call, Response<ArrayList<User>> response) {
-                                Toast.makeText(getApplicationContext(),response.body().toString(),Toast.LENGTH_SHORT).show();
+                                ArrayList<User> userArrayList = response.body();
+                                int position = userIsValid(loginEmail.getText().toString(),loginPassword.getText().toString(), userArrayList);
+                                if(position != 0){
+                                    Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+                                    Conector.setUser(userArrayList.get(position));
+                                    startActivity(intentMain);
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(),R.string.login_activity_error_authenfication,Toast.LENGTH_SHORT).show();
+                                }
                             }
 
                             @Override
@@ -91,11 +101,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.register_event:
                 Intent intentRegister = new Intent(getApplicationContext(),SignupActivity.class);
                 startActivity(intentRegister);
+                finish();
                 break;
             default:
                 break;
         }
     }
+
+    private int userIsValid(String email, String pass, ArrayList<User> body) {
+        for (int i = 0; i < body.size(); i++) {
+            if ((email.equals(body.get(i).getEmail()) || email.equals(body.get(i).getUsername())) && pass.equals(body.get(i).getPassword())){
+                return i;
+            }
+        }
+        return 0;
+    }
+
     private boolean isNetAvailed() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();

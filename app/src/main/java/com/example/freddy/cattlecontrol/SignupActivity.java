@@ -33,7 +33,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.register_password) EditText registerPassword;
     @BindView(R.id.register_confirm_password) EditText registerConfirmPassword;
     @BindView(R.id.btn_register) Button registerBtn;
-    @BindView(R.id.login_event) TextView registerEvent;
+    @BindView(R.id.login_event) TextView loginEvent;
     static boolean existe = false;
     // Variable used to hide keyboard
     private ScrollView activitySignup;
@@ -53,7 +53,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
         registerBtn.setOnClickListener(this);
-        registerEvent.setOnClickListener(this);
+        loginEvent.setOnClickListener(this);
     }
 
     public void onClick(View v) {
@@ -104,6 +104,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                             Toast.makeText(getApplicationContext(), R.string.login_activity_signing_in, Toast.LENGTH_SHORT).show();
                                             Intent intentRegister = new Intent(getApplicationContext(), MainActivity.class);
                                             startActivity(intentRegister);
+                                            finish();
                                         } else {
                                             Toast.makeText(getApplicationContext(), R.string.sign_up_activity_error_signing_up, Toast.LENGTH_SHORT).show();
                                         }
@@ -117,7 +118,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                             } else {
                                 registerEmail.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.app_alert, 0);
                                 registerUsername.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.app_alert, 0);
-                                Toast.makeText(getApplicationContext(),"El nombre de usuario o email ya existen",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),R.string.sign_up_activity_error_username_email,Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -126,34 +127,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
                         }
                     });
-                     /*   User user = new User(registerName.getText().toString(), registerLastname.getText().toString(),
-                                registerEmail.getText().toString(), registerUsername.getText().toString(),
-                                registerPassword.getText().toString());
-
-
-                        Call<User> userCall = this.retrofitClient.getService().createUser(user);
-                        userCall.enqueue(new Callback<User>() {
-                            @Override
-                            public void onResponse(Call<User> call, Response<User> response) {
-                                if (response.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), R.string.login_activity_signing_in, Toast.LENGTH_SHORT).show();
-                                    Intent intentRegister = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(intentRegister);
-                                } else {
-                                    Toast.makeText(getApplicationContext(), R.string.sign_up_activity_error_signing_up, Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<User> call, Throwable t) {
-                                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });*/
                 }
 
                 break;
-            case R.id.register_event:
-
+            case R.id.login_event:
+                Intent intentLogin = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intentLogin);
+                finish();
                 break;
             default:
                 break;
@@ -178,5 +158,25 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // The activity has become visible (it is now "resumed").
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Another activity is taking focus (this activity is about to be "paused").
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // The activity is no longer visible (it is now "stopped")
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

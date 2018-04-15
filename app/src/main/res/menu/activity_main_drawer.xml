@@ -5,33 +5,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_farms"
+            android:icon="@drawable/ic_menu_farm"
+            android:title="@string/main_activity_farms" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_animals"
+            android:icon="@drawable/ic_menu_cow"
+            android:title="@string/main_activity_animals"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_plans"
+            android:icon="@drawable/ic_menu_plan"
+            android:title="@string/main_activity_plans"/>
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_outs"
+            android:icon="@drawable/ic_menu_out"
+            android:title="@string/main_activity_out" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/main_activity_configuration">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/app_settings"
+                android:title="@string/main_activity_settings"/>
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_sign_up"
+                android:icon="@drawable/app_shutdown"
+                android:title="@string/main_activity_log_out"/>
         </menu>
     </item>
 

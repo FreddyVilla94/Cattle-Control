@@ -9,7 +9,7 @@
     <!--Login activity resources -->
     <string name="login_activity_email">Correo</string>
     <string name="login_activity_password">Contraseña</string>
-    <string name="login_activity_login">Login</string>
+    <string name="login_activity_login">Entrar</string>
     <string name="login_activity_or">o</string>
     <string name="login_activity_register">¿Sin cuenta todavía? Créese una</string>
 
@@ -38,4 +38,18 @@
     <string name="sign_up_activity_invalid_confirm_password">Confirmación de contraseña inválida</string>
     <string name="sign_up_activity_invalid_passwords_do_not_match">Las contraseñas no coinciden</string>
     <string name="sign_up_activity_error_signing_up">Un error al registrarse</string>
+    <string name="sign_up_activity_error_username_email">El nombre de usuario o email ya existe</string>
+
+    <!-- Main activity resources -->
+    <string name="main_activity_your_famrs_lists">Tu lista de granjas</string>
+    <string name="main_activity_greeting">Bienvenido!</string>
+    <string name="main_activity_farms_lists">Lista de granjas</string>
+    <string name="main_activity_farms">Granjas</string>
+    <string name="main_activity_animals">Animales</string>
+    <string name="main_activity_plans">Planes</string>
+    <string name="main_activity_out">Outs</string>
+    <string name="main_activity_configuration">Configuración</string>
+    <string name="main_activity_settings">Ajustes</string>
+    <string name="main_activity_log_out">Salir</string>
+    "
 </resources>
