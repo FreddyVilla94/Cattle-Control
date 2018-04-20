@@ -41,15 +41,18 @@
     <string name="sign_up_activity_error_username_email">El nombre de usuario o email ya existe</string>
 
     <!-- Main activity resources -->
-    <string name="main_activity_your_famrs_lists">Tu lista de granjas</string>
+    <string name="main_activity_your_farms_lists">Tu lista de granjas</string>
     <string name="main_activity_greeting">Bienvenido!</string>
-    <string name="main_activity_farms_lists">Lista de granjas</string>
     <string name="main_activity_farms">Granjas</string>
     <string name="main_activity_animals">Animales</string>
     <string name="main_activity_plans">Planes</string>
-    <string name="main_activity_out">Outs</string>
+    <string name="main_activity_out">Salidas</string>
     <string name="main_activity_configuration">Configuración</string>
     <string name="main_activity_settings">Ajustes</string>
     <string name="main_activity_log_out">Salir</string>
-    "
+
+    <!-- Fragment Farm -->
+    <string name="without_farms">Nombre de la granja</string>
+    <string name="hectares">Hectáreas</string>
+    <string name="apples">Manzanas</string>
 </resources>

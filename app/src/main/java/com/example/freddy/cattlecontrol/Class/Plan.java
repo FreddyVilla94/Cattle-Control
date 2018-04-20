@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Plan {
 
-    private Integer id;
+    private String id;
     private String name;
     private String description;
     private ArrayList<Animal> animals = null;
@@ -25,7 +25,7 @@ public class Plan {
      * @param description
      * @param name
      */
-    public Plan(Integer id, String name, String description) {
+    public Plan(String id, String name, String description) {
         super();
         this.id = id;
         this.name = name;
@@ -33,11 +33,11 @@ public class Plan {
         animals = new ArrayList<>();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

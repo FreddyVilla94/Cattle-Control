@@ -4,7 +4,7 @@ package com.example.freddy.cattlecontrol.Class;
 
 public class Out {
 
-    private Integer id;
+    private String id;
     private String idAnimal;
     private String date;
     private Boolean destiny;
@@ -23,7 +23,7 @@ public class Out {
      * @param destiny
      * @param date
      */
-    public Out(Integer id, String idAnimal, String date, Boolean destiny) {
+    public Out(String id, String idAnimal, String date, Boolean destiny) {
         super();
         this.id = id;
         this.idAnimal = idAnimal;
@@ -31,11 +31,11 @@ public class Out {
         this.destiny = destiny;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

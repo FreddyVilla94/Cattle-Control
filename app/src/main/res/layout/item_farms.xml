@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.84"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:text="Name   : "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#040404"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textNameFarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#040404" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/typeMeasure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:text="Hectares : "
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#040404"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textSizeFarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:text="Medium Text"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#040404" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Farm {
 
-    private Integer id;
+    private String id;
     private String name;
     private Extension extension;
     private ArrayList<Animal> animals = null;
@@ -31,7 +31,7 @@ public class Farm {
      * @param name
      * @param out
      */
-    public Farm(Integer id, String name, Extension extension) {
+    public Farm(String id, String name, Extension extension) {
         super();
         this.id = id;
         this.name = name;
@@ -41,11 +41,11 @@ public class Farm {
         out = new ArrayList<>();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -76,6 +76,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 ArrayList<User> userArrayList = response.body();
                                 int position = userIsValid(loginEmail.getText().toString(),loginPassword.getText().toString(), userArrayList);
                                 if(position != 0){
+                                    //Toast.makeText(getApplicationContext(),userArrayList.get(position).toString(),Toast.LENGTH_SHORT).show();
                                     Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
                                     Conector.setUser(userArrayList.get(position));
                                     startActivity(intentMain);

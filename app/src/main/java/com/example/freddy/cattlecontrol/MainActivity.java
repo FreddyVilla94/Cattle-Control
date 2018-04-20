@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.main_activity_your_famrs_lists));
+        toolbar.setTitle(getResources().getString(R.string.main_activity_your_farms_lists));
         toolbar.setSubtitle(getResources().getString(R.string.main_activity_greeting));
         setSupportActionBar(toolbar);
 
@@ -105,11 +106,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
         if (id == R.id.nav_farms) {
             // Handle the camera action
+            getSupportActionBar().setTitle(R.string.main_activity_your_farms_lists);
+            getSupportActionBar().setSubtitle(R.string.main_activity_greeting);
+            fragmentManager.beginTransaction().replace(R.id.content_main ,new FragmentViewFarm()).commit();
         } else if (id == R.id.nav_animals) {
-
+            getSupportActionBar().setTitle("Lista Seleccionada");
+            getSupportActionBar().setSubtitle(R.string.main_activity_animals);
         } else if (id == R.id.nav_plans) {
 
         } else if (id == R.id.nav_outs) {
