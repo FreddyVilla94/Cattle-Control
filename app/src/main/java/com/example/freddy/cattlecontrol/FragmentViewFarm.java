@@ -23,7 +23,6 @@ public class FragmentViewFarm extends Fragment {
 
     private View view;
     private User user = new User();
-    private TextView numberFarmTextView;
     private ArrayList<Farm> farmArrayList = new ArrayList<>();
     private AdapterListFarms adapterListFarms;
 
@@ -33,7 +32,6 @@ public class FragmentViewFarm extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_view_farm, container, false);
         user = Conector.getUser();
-        numberFarmTextView = (TextView) view.findViewById(R.id.numberFarms);
         Farm farm1 = new Farm("1","Finca TEC", new Extension(30,false));
         Farm farm2 = new Farm("2","Finca TEC", new Extension(30,false));
         Farm farm3 = new Farm("3","Finca TEC", new Extension(30,false));

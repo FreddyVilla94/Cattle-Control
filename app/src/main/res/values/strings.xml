@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Opciones</string>
 
     <!--Login activity resources -->
     <string name="login_activity_email">Correo</string>
@@ -52,7 +52,7 @@
     <string name="main_activity_log_out">Salir</string>
 
     <!-- Fragment Farm -->
-    <string name="without_farms">Nombre de la granja</string>
+    <string name="without_farms">Tus granjas</string>
     <string name="hectares">Hectáreas</string>
     <string name="apples">Manzanas</string>
 </resources>
